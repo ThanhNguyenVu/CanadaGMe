@@ -1,8 +1,13 @@
 <html>
+<head>
+  <meta charset="utf-8">
+  <title>CanadaGMe</title>
+</head>
+
   <body>
 
 
-
+    <button onClick="sendInfo()">Test</button>
 
 
 
@@ -35,6 +40,11 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
+
+      function sendInfo(){
+        temp = firebase.database().ref();
+        temp.push("hello");
+      }
       </script>
   </body>
 </html>
