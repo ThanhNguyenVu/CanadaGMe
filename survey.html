@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>GMe</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+
+		<!-- MATERIAL DESIGN ICONIC FONT -->
+		<link rel="stylesheet" href="font.css">
+
+		<!-- STYLE CSS -->
+		<link rel="stylesheet" href="boot.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="image-holder">
+				<img src="survey-hover.png" alt="">
+			</div>
+            <form action="">
+            	<div class="form-header">
+            		<a href="#">#CanadaGiveMe</a>
+            		<h3>Check out my avaibility online</h3>
+            	</div>
+            	<div id="wizard">
+            		<!-- SECTION 1 -->
+	                <h4></h4>
+	                <section>
+						<div class="form-row">
+	                    	<label for="">
+	                    		First name:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="firstname"id="firstNameField" >
+	                    	</div>
+						</div>
+						<div class="form-row">
+	                    	<label for="">
+	                    		Last name:
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<input type="text" class="form-control" name="lastname"id="lastNameField" >
+	                    	</div>
+						</div>
+
+	                    <div class="form-row" style="margin-bottom: 26px;">
+	                    	<label for="">
+	                    		What is the applicant's age range?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="age" id="ageField" class="form-control">
+									<option value="0-25" class="option">0-25</option>
+									<option value="26+" class="option">26+</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		How does the applicant identify?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="" id="gender" class="form-control">
+									<option value="male" class="option">Male</option>
+									<option value="female" class="option">Female</option>
+									<option value="other" class="option">Other</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Is the applicatn a student?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="" id="isCurrentStudent" class="form-control">
+									<option value="yes" class="option">Yes</option>
+									<option value="no" class="option">No</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Are you currently employed?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="" id="isCurrentEmployed" class="form-control">
+	                    			<option value="" selected disabled>Select Term</option>
+									<option value="yes" class="option">Yes</option>
+									<option value="no" class="option">No</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>
+
+	                </section>
+
+					<!-- SECTION 2 -->
+	                <h4></h4>
+	                <section>
+	                    <div class="form-row">
+	                    	<label for="">
+	                    		Does the applicant have any medical conditions?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="" id="hasMedicalCondition" class="form-control">
+	                    			<option value="" selected disabled>Select answer</option>
+									<option value="yes" class="option">Yes</option>
+									<option value="no" class="option">No</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+						</div>
+						<div class="form-row">
+	                    	<label for="">
+	                    		Has the applicant been living in Canada as a permanent resident for more than 10 years?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="" id="isTenYear" class="form-control">
+	                    			<option value="" selected disabled>Select answer</option>
+									<option value="yes" class="option">Yes</option>
+									<option value="no" class="option">No</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+						</div>
+						<div class="form-row">
+	                    	<label for="">
+	                    		What is the apllicant's marial status?
+	                    	</label>
+	                    	<div class="form-holder">
+	                    		<select name="" id="currentStatus" class="form-control">
+	                    			<option value="" selected disabled>Select answer</option>
+									<option value="married" class="option">Married</option>
+									<option value="seperated" class="option">Seperated</option>
+									<option value="single" class="option">Single</option>
+									<option value="commonlaw" class="option">Common-Law</option>
+								</select>
+								<i class="zmdi zmdi-caret-down"></i>
+	                    	</div>
+	                    </div>
+
+
+	                </section>
+
+
+				<div class = "form-header">
+				<input type="submit" value="Submit" onclick="javascript: createUser()">
+				</div>
+
+				<!-- The core Firebase JS SDK is always required and must be listed first -->
+				<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
+
+		<!-- TODO: Add SDKs for Firebase products that you want to use
+				 https://firebase.google.com/docs/web/setup#available-libraries -->
+				<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-storage.js"></script>
+				<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+				<!-- TODO: Add SDKs for Firebase products that you want to use
+				 https://firebase.google.com/docs/web/setup#available-libraries -->
+				<script>
+					var config = {
+						apiKey: "AIzaSyA0ZEZPEUjcWkWhTvAfeVFcqmuZyPQmRTU",
+						authDomain: "canadagme-284be.firebaseapp.com",
+						databaseURL: "https://canadagme-284be.firebaseio.com",
+						projectId: "canadagme-284be",
+						storageBucket: "canadagme-284be.appspot.com",
+						messagingSenderId: "571223702903",
+						appId: "1:571223702903:web:29e3fc774f3b076a11b572",
+						measurementId: "G-H0NG20YVQ4"
+					}
+					firebase.initializeApp(config);
+					firebase.analytics();
+					function createUser(){
+						alert("booP");
+						var database = firebase.database().ref('User');
+						database.child("Joe").set({
+							ReecentlyMovedToCanada:"joe",
+							Age:"joe",
+							FirstName:"joe",
+							LastName:"joe",
+							IsStudent: "joe",
+							IsEmployed: "joe",
+							InDebt:"joe",
+							MedicalConditions:"joe",
+							hasFamilyDependants: "joe"
+						});
+					}
+					function addLoan(){
+						var database = firebase.database.ref("Opportunities");
+						database.child("Immigration Loan").set({
+							Name: "Immagration Loan",
+							Age:'18',
+							Employment: 'yes'
+						})
+					}
+				</script>
+
+
+		<!-- JQUERY STEP
+		<script src="js/jquery.steps.js"></script> -->
+
+		<!-- DATE-PICKER -->
+
+<!-- Template created and distributed by Colorlib -->
+</body>
+</html>

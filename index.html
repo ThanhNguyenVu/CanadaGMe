@@ -1,20 +1,236 @@
+<!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
   <title>CanadaGMe</title>
+
+  <!-- googlefont -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Ubuntu&display=swap" rel="stylesheet">
+
+  <!-- Css stylesheet -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="index.css" />
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/5cae07c647.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap Scripts -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </head>
 
-  <body>
+
+<body>
+
+  <section id="title">
+    <div class="container-fluid">
 
 
-    <button onClick="sendInfo()">Test</button>
+      <!-- Nav Bar -->
+
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="">CanadaGMe</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Togglenavigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+          <ul class="navbar-nav ml-auto">
+
+            <li class="nav-item">
+              <a class="nav-link" href="#whyus">Why us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#howitworks">How it works</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+
+      <!-- Title -->
+      <div class="row">
+        <div class="col-lg-6">
+          <h1 class="big-heading">Check your eligibility for Government Funds within seconds</h1>
+          <button class="btn btn-primary btn-lg" style="margin-top: 10px" type="button"><i class="fas fa-search-dollar"></i> Find a Fund</button>
+        <div class="col-lg-6">
+          <img class="titleimage" src="images/funds.png" alt="funds">
+        </div>
+      </div>
+
+    </div>
+
+
+  </section>
+
+
+  <!-- Why us -->
+
+  <section id="whyus">
+    <div class="row container-fluid">
+
+      <div class="col-lg-4 col-md-12 sentences">
+        <span style="color: #5969BC;">
+          <i class="fas fa-fast-forward fa-5x icon2"></i>
+        </span>
+
+        <h3 class="features-heading">Easy to Apply</h3>
+        <p>Find funds within seconds</p>
+
+      </div>
+      <div class="col-lg-4 col-md-12 sentences">
+        <span style="color: #5969BC;">
+          <i class="fas fa-puzzle-piece fa-5x icon2"></i>
+        </span>
+
+        <h3 class="features-heading">Eligibility</h3>
+        <p>Receive funds according to your elgibility</p>
+
+      </div>
+      <div class="col-lg-4 col-md-12 sentences">
+        <span style="color: #5969BC;">
+          <i class="fas fa-file-alt fa-5x icon2"></i>
+        </span>
+
+        <h3 class="features-heading">Avoid lots of paper works</h3>
+        <p>Skip all the paper works and see the results</p>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- Testimonials -->
+
+  <section id="testimonials">
+    <div id="testimonial-carousel" class="carousel slide" data-ride="false">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <h2 class="testimonial-text">I received funds so quick that now I was able to do my business on time</h2>
+          <img class="avatar" src="images/ava2.png" >
+          <em>Pebbles, New York</em>
+        </div>
+        <div class="carousel-item">
+          <h2 class="testimonial-text">I highly recommend CanadaGMe, if you want fund fast and easy</h2>
+          <img class="avatar" class="testimonial-image" src="images/ava1.png" alt="lady-profile">
+          <em>Beverly, Illinois</em>
+        </div>
+
+        <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+
+        </a>
+        <a class="carousel-control-next" href="#testimonial-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+
+        </a>
+      </div>
+    </div>
 
 
 
 
 
+  </section>
 
 
+
+
+
+  <!-- how it works -->
+
+  <section id="howitworks">
+
+    <h2 class="section-heading">How it works</h2>
+    <p>Simple and Fast</p>
+
+<div class="row">
+
+<div class="pricing-column col-lg-4 col-md-6">
+  <div>
+    <div class="card-header">
+      <h3 class="howitworks-heading">First</h3>
+    </div>
+
+    <div class="card-body">
+
+      <p>Fill out the Find a Fund Form</p>
+
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="pricing-column col-lg-4 col-md-6">
+  <div >
+    <div class="card-header">
+      <h3 class="howitworks-heading">Second</h3>
+    </div>
+
+    <div class="card-body">
+
+      <p>Receive all informaiton about potentially eligible fund programs</p>
+
+
+    </div>
+
+  </div>
+</div>
+
+<div class="pricing-column col-lg-4">
+  <div>
+    <div class="card-header">
+      <h3 class="howitworks-heading">Third</h3>
+    </div>
+
+    <div class="card-body">
+
+
+      <p>Send your documents to coresponding government organization</p>
+
+
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+    </section> <!-- Call to Action -->
+
+      <section id="cta">
+
+        <h3 class="bottomline">Find your fund anytime anywhere</h3>
+        <div class="bottombutton">
+
+
+
+        <button class="btn btn-primary btn-lg" style="margin-top: 10px" type="button"><i class="fas fa-search-dollar"></i> Find a Fund</button>
+</div>
+      </section>
+
+
+      <!-- Footer -->
+
+      <footer id="footer">
+
+          <i class="socialicons fab fa-twitter fa-1x"></i>
+          <i class="socialicons fab fa-facebook-f fa-1x"></i>
+          <i class="socialicons fab fa-instagram fa-1x"></i>
+          <i class="socialicons fas fa-envelope fa-1x"></i>
+
+
+        <p>© Copyright 2020 CanadaGMe</p>
+
+      </footer>
 
 
 <!-- ************* JAVASCRIPT GOES HERE******************* -->
@@ -22,12 +238,15 @@
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-app.js"></script>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
+<!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-database.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
+      var config = {
         apiKey: "AIzaSyA0ZEZPEUjcWkWhTvAfeVFcqmuZyPQmRTU",
         authDomain: "canadagme-284be.firebaseapp.com",
         databaseURL: "https://canadagme-284be.firebaseio.com",
@@ -36,15 +255,31 @@
         messagingSenderId: "571223702903",
         appId: "1:571223702903:web:29e3fc774f3b076a11b572",
         measurementId: "G-H0NG20YVQ4"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-
-      function sendInfo(){
-        temp = firebase.database().ref();
-        temp.push("hello");
       }
-      </script>
+      firebase.initializeApp(config);
+      firebase.analytics();
+      function createUser(){
+        var database = firebase.database().ref('User');
+        database.child("Joe").set({
+          ReecentlyMovedToCanada:"joe",
+          Age:"joe",
+          FirstName:"joe",
+          LastName:"joe",
+          IsStudent: "joe",
+          IsEmployed: "joe",
+          InDebt:"joe",
+          MedicalConditions:"joe",
+          hasFamilyDependants: "joe"
+        });
+      }
+      function addLoan(){
+        var database = firebase.database.ref("Opportunities");
+        database.child("Immigration Loan").set({
+          Name: "Immagration Loan",
+          Age:'18',
+          Employment: 'yes'
+        })
+      }
+    </script>
   </body>
 </html>
