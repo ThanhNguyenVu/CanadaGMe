@@ -218,10 +218,10 @@
       </section>
 
       <section>
-        <h3>Test your eligibility now by submiting this form!</h3>
+        <h2 align="center">Test your eligibility now by submiting this form!</h3>
         <hr>
-        <div>
-          <div>
+        <div align="center">
+          <div style="margin-left :auto; margin-right: auto">
             <p>What is the applicant's first name name?</p>
             <input type="text" id="firstNameBox"/>
             </div>
@@ -283,7 +283,6 @@
             </div>
             <hr>
             <button onclick="javascript: createUser()">Submit</button>
-            <button onclick="javascript: addLoan()">Submit</button>
         </div>
       </section>
 
@@ -345,29 +344,55 @@
             Gender: document.getElementById("gender").value
           });
           alert("Thank you for submitting your application!");
-          document.getElementById("isTenYear").value = "";
-          document.getElementById("ageBox").value ="";
-          document.getElementById("firstNameBox").value ="";
-          document.getElementById("lastNameBox").value ="";
-          document.getElementById("isStudent").value="";
-          document.getElementById("isEmployed").value="";
-          document.getElementById("hasMedicalConditions").value="";
-          document.getElementById("maritalStatus").value="";
-          document.getElementById("gender").value="";
-
+          databaseLoan.on('value',gotData,errData);
+          gotData();
         }
       }
-      function addLoan(){
+      /*function addLoan(){
         var database = firebase.database().ref("Opportunities");
-        database.child("Immigration Loan").set({
-          Name: "Immagration Loan",
-          Age:'26+',
+        database.child("UottawaHack Immigrant benefit").set({
+          Name: "UottawaHack",
+          Age:'0-25',
           IsEmployed: 'yes',
-          IsStudent:"NA",
-          MedicalConditions:"NA",
-          MaritalStatus:"Married",
-          Description: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/service-delivery/immigration-loans-program.html"
+          IsStudent:"yes",
+          MedicalConditions:"yes",
+          MaritalStatus:"single",
+          Description: "Uottawa is giving out free money!"
         });
+      }*/
+      var databaseLoan = firebase.database().ref("Opportunities");
+      function gotData(data){
+        var temp = data.val();
+        var keys = Object.keys(temp);
+        for (var i=0;i<keys.length;i++){
+          var k = keys[i];
+          var age = temp[k].Age;
+          var description = temp[k].Description;
+          var isEmployed = temp[k].IsEmployed;
+          var isStudent = temp[k].IsStudent;
+          var married = temp[k].IsStudent;
+          var medicalConditions = temp[k].MedicalConditions;
+          var name = temp[k].Name;
+
+          if(document.getElementById("ageBox").value == age &&document.getElementById("isEmployed").value == isEmployed ){
+            alert("You could be eligible for : " + name);
+          }
+        }
+        document.getElementById("isTenYear").value = "";
+        document.getElementById("ageBox").value ="";
+        document.getElementById("firstNameBox").value ="";
+        document.getElementById("lastNameBox").value ="";
+        document.getElementById("isStudent").value="";
+        document.getElementById("isEmployed").value="";
+        document.getElementById("hasMedicalConditions").value="";
+        document.getElementById("maritalStatus").value="";
+        document.getElementById("gender").value="";
+
+
+      }
+      function errData(err){
+        console.log('Error');
+        console.log(err);
       }
     </script>
   </body>
