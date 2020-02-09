@@ -78,7 +78,7 @@
         </span>
 
         <h3 class="features-heading">Easy to Apply</h3>
-        <p>Find funds within seconds</p>
+        <p>Find funds within seconds.</p>
 
       </div>
       <div class="col-lg-4 col-md-12 sentences">
@@ -110,14 +110,14 @@
     <div id="testimonial-carousel" class="carousel slide" data-ride="false">
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <h2 class="testimonial-text">I received funds so quick that now I was able to do my business on time</h2>
+          <h2 class="testimonial-text">I received funds so quick that now I was able to do my business on time.</h2>
           <img class="avatar" src="images/ava2.png" >
-          <em>Pebbles, New York</em>
+          <em>Ottawa, Ontario</em>
         </div>
         <div class="carousel-item">
-          <h2 class="testimonial-text">I highly recommend CanadaGMe, if you want fund fast and easy</h2>
+          <h2 class="testimonial-text">I highly recommend CanadaGMe, if you want fund fast and easy.</h2>
           <img class="avatar" class="testimonial-image" src="images/ava1.png" alt="lady-profile">
-          <em>Beverly, Illinois</em>
+          <em>Waterloo, Ontario</em>
         </div>
 
         <a class="carousel-control-prev" href="#testimonial-carousel" role="button" data-slide="prev">
@@ -150,7 +150,7 @@
 
 <div class="row">
 
-<div class="pricing-column col-lg-4 col-md-6">
+<div class="howitworks-column col-lg-4 col-md-6">
   <div>
     <div class="card-header">
       <h3 class="howitworks-heading">First</h3>
@@ -158,7 +158,7 @@
 
     <div class="card-body">
 
-      <p>Fill out the Find a Fund Form</p>
+      <p>Fill out the Find a Fund Form.</p>
 
 
     </div>
@@ -168,7 +168,7 @@
 </div>
 
 
-<div class="pricing-column col-lg-4 col-md-6">
+<div class="howitworks-column col-lg-4 col-md-6">
   <div >
     <div class="card-header">
       <h3 class="howitworks-heading">Second</h3>
@@ -176,7 +176,7 @@
 
     <div class="card-body">
 
-      <p>Receive all informaiton about potentially eligible fund programs</p>
+      <p>Receive all information about potentially eligible fund programs</p>
 
 
     </div>
@@ -184,7 +184,7 @@
   </div>
 </div>
 
-<div class="pricing-column col-lg-4">
+<div class="howitworks-column col-lg-4">
   <div>
     <div class="card-header">
       <h3 class="howitworks-heading">Third</h3>
@@ -193,7 +193,7 @@
     <div class="card-body">
 
 
-      <p>Send your documents to coresponding government organization</p>
+      <p>We will send your documents to a coresponding government organization and receive the funds instantly</p>
 
 
     </div>
@@ -217,6 +217,75 @@
 </div>
       </section>
 
+      <section>
+        <h3>Test your eligibility now by submiting this form!</h3>
+        <hr>
+        <div>
+          <div>
+            <p>What is the applicant's first name name?</p>
+            <input type="text" id="firstNameBox"/>
+            </div>
+            <div>
+              <p>What is the applicant's last name?</p>
+              <input type="text" id="lastNameBox"/>
+            </div>
+            <div>
+              <p>What is the applicant's age?</p>
+              <select id="ageBox">
+                <option value="0-25">0-25</option>
+                <option value="26+">26+</option>
+              </select>
+            </div>
+            <div>
+              <p>How does the applicant identify?</p>
+              <select id="gender">
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div>
+              <p>Is the applicant a student?</p>
+              <select id="isStudent">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <p>Is the applicant currently employed?</p>
+              <select id="isEmployed">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <p>Does the applicant have any medcial conditions?</p>
+              <select id="hasMedicalConditions">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <p>Has the applicant been living in Canada as a permanent resident for more than 10 years?</p>
+              <select id="isTenYear">
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </div>
+            <div>
+              <p>What is the applicant's marital status?</p>
+              <select id="maritalStatus">
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="seperated">Seperated</option>
+                <option value="commonlaw">Common-Law</option>
+              </select>
+            </div>
+            <hr>
+            <button onclick="javascript: createUser()">Submit</button>
+            <button onclick="javascript: addLoan()">Submit</button>
+        </div>
+      </section>
 
       <!-- Footer -->
 
@@ -259,26 +328,46 @@
       firebase.initializeApp(config);
       firebase.analytics();
       function createUser(){
-        var database = firebase.database().ref('User');
-        database.child("Joe").set({
-          ReecentlyMovedToCanada:"joe",
-          Age:"joe",
-          FirstName:"joe",
-          LastName:"joe",
-          IsStudent: "joe",
-          IsEmployed: "joe",
-          InDebt:"joe",
-          MedicalConditions:"joe",
-          hasFamilyDependants: "joe"
-        });
+        if(document.getElementById("isTenYear").value == "" ||  document.getElementById("ageBox").value == "" || document.getElementById("firstNameBox").value == "" || document.getElementById("lastNameBox").value == "" || document.getElementById("isStudent").value == "" || document.getElementById("isEmployed").value == "" || document.getElementById("hasMedicalConditions").value == "" ||  document.getElementById("maritalStatus").value == "" || document.getElementById("gender").value == ""  ){
+          alert("Please ensure all fields are filled");
+        }
+        else{
+          var database = firebase.database().ref('User');
+          database.child(document.getElementById("firstNameBox").value+ " "+ document.getElementById("lastNameBox").value).set({
+            RecentlyMovedToCanada:document.getElementById("isTenYear").value,
+            Age: document.getElementById("ageBox").value,
+            FirstName:document.getElementById("firstNameBox").value,
+            LastName:document.getElementById("lastNameBox").value,
+            IsStudent: document.getElementById("isStudent").value,
+            IsEmployed: document.getElementById("isEmployed").value,
+            MedicalConditions:document.getElementById("hasMedicalConditions").value,
+            MaritalStatus: document.getElementById("maritalStatus").value,
+            Gender: document.getElementById("gender").value
+          });
+          alert("Thank you for submitting your application!");
+          document.getElementById("isTenYear").value = "";
+          document.getElementById("ageBox").value ="";
+          document.getElementById("firstNameBox").value ="";
+          document.getElementById("lastNameBox").value ="";
+          document.getElementById("isStudent").value="";
+          document.getElementById("isEmployed").value="";
+          document.getElementById("hasMedicalConditions").value="";
+          document.getElementById("maritalStatus").value="";
+          document.getElementById("gender").value="";
+
+        }
       }
       function addLoan(){
-        var database = firebase.database.ref("Opportunities");
+        var database = firebase.database().ref("Opportunities");
         database.child("Immigration Loan").set({
           Name: "Immagration Loan",
-          Age:'18',
-          Employment: 'yes'
-        })
+          Age:'26+',
+          IsEmployed: 'yes',
+          IsStudent:"NA",
+          MedicalConditions:"NA",
+          MaritalStatus:"Married",
+          Description: "https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals/service-delivery/immigration-loans-program.html"
+        });
       }
     </script>
   </body>

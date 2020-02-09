@@ -77,7 +77,10 @@ p {
   width: 100%;
   position: absolute;
   right: -40rem;
-  : white;
+
+}
+img {
+  max-width: 100%;
 
 }
 
@@ -149,7 +152,7 @@ p {
   text-align: center;
 
 }
-.pricing-column {
+.howitworks-column {
   padding: 3% 2%;
 }
 
